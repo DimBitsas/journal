@@ -5,12 +5,13 @@
     <title>Journal home page</title>
 </head>
 <body>
-    Welcome<br>
+    Welcome<br><br>
 
     <tr th:each="entry : ${entries}">
-        <td><span th:text="${entry.title}"> Title </span></td>
-        <td><span th:text="${entry.description}"> Description </span></td>
-        <br>
+        <td><b>Title</b>: </td>
+        <td th:text="${entry.title}"> </td><br>
+        <td><b>Description</b>: </td>
+        <td th:text="${entry.description}"></td><br><br>
     </tr>
 </body>
 </html>
