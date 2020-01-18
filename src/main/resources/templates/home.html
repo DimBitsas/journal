@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Journal home page</title>
+</head>
+<body>
+    Welcome<br>
+
+    <tr th:each="entry : ${entries}">
+        <td><span th:text="${entry.title}"> Title </span></td>
+        <td><span th:text="${entry.description}"> Description </span></td>
+        <br>
+    </tr>
+</body>
+</html>
