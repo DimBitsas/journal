@@ -1,5 +1,6 @@
 package com.personal.learning.journal.controller;
 
+import com.personal.learning.journal.exception.EntryNotSavedException;
 import com.personal.learning.journal.model.Entry;
 import com.personal.learning.journal.service.EntryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +35,7 @@ public class journalController {
         Entry savedEntry = service.save(entryToBeSaved);
 
         if(savedEntry == null){
-            System.out.println("Entry is not saved");
-            //throw new EntryNotSavedException();
+            throw new EntryNotSavedException("Entry was not saved in the database");
         }
 
         return "newEntryCreated";
