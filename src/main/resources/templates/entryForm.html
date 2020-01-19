@@ -8,10 +8,10 @@
     <h1>Create new journal entry</h1><br>
 
     <form action="createNewEntry">
-        Provide title<br>
-        <input type="text" name="title" id="title" required><br>
-        Provide description<br>
-        <input type="text" name="description" id="description" required><br>
+        Provide title(4 or more characters)<br>
+        <input pattern=".{4,}" required title="4 characters minimum" type="text" name="title" id="title"><br>
+        Provide description(10 or more characters)<br>
+        <input pattern=".{10,}" required title="10 characters minimum" type="text" name="description" id="description"><br>
         Provide difficulty<br>
         <input type="number" name="difficulty" id="difficulty" min="1" max="10" required><br>
         Provide relevant topics<br>
