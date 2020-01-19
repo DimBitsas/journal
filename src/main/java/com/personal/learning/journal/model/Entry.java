@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -19,8 +21,11 @@ public class Entry {
     @Size(min = 10, message = "Description should have at least 10 characters")
     private String description;
 
+    @Min(1)
+    @Max(10)
     private Integer difficulty;
 
+    @Min(1)
     private Integer timeSpent;
 
     private String relevantTopics;
