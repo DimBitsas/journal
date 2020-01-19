@@ -21,8 +21,7 @@ public class Entry {
     @Size(min = 10, message = "Description should have at least 10 characters")
     private String description;
 
-    @Past(message = "Past date is required")
-    private Date date;
+    private Integer difficulty;
 
     private Integer timeSpent;
 
@@ -30,10 +29,10 @@ public class Entry {
 
     protected Entry(){}
 
-    public Entry(String title, String description, Date date, Integer timeSpent, String relevantTopics) {
+    public Entry(String title, String description, Integer difficulty, Integer timeSpent, String relevantTopics) {
         this.title = title;
         this.description = description;
-        this.date = date;
+        this.difficulty = difficulty;
         this.timeSpent = timeSpent;
         this.relevantTopics = relevantTopics;
     }
@@ -62,12 +61,12 @@ public class Entry {
         this.description = description;
     }
 
-    public Date getDate() {
-        return date;
+    public Integer getDifficulty() {
+        return difficulty;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDifficulty(Integer difficulty) {
+        this.difficulty = difficulty;
     }
 
     public Integer getTimeSpent() {

@@ -6,14 +6,16 @@
 </head>
 <body>
     Welcome<br><br>
+    <a href="createNewEntry">Create new entry</a><br>
 
+    <h1>All the journal entries so far</h1>
     <tr th:each="entry : ${entries}">
         <td><b>Title</b>: </td>
         <td th:text="${entry.title}"> </td><br>
         <td><b>Description</b>: </td>
         <td th:text="${entry.description}"></td><br>
-        <td><b>Date</b>: </td>
-        <td th:text="${entry.date}"></td><br>
+        <td><b>Difficulty</b>: </td>
+        <td th:text="${entry.difficulty}"></td><br>
         <td><b>Time spent</b>: </td>
         <td th:text="${entry.timeSpent}"></td><br>
         <td><b>Relevant topics</b>: </td>
