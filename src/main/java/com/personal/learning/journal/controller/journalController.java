@@ -22,22 +22,21 @@ public class journalController {
         return "home";
     }
 
-    @GetMapping(path = "/createNewEntry")
-    public String showCreateNewEntryForm(){return "createNewEntry";}
+    @GetMapping(path = "/entryForm")
+    public String showEntryForm(){return "entryForm";}
 
-    @GetMapping(path = "/createNewEntryValidation")
+    @GetMapping(path = "/createNewEntry")
     public String createNewEntry(@RequestParam("title") String title, @RequestParam("description") String description,
                                  @RequestParam("difficulty") int difficulty, @RequestParam("timeSpent") int timeSpent,
                                  @RequestParam("relevantTopics") String relevantTopics){
 
-        System.out.println(title);
-        System.out.println(description);
-        System.out.println(difficulty);
-        System.out.println(timeSpent);
-        System.out.println(relevantTopics);
-
         Entry entryToBeSaved = new Entry(title,description,difficulty,timeSpent,relevantTopics);
         Entry savedEntry = service.save(entryToBeSaved);
+
+        if(savedEntry == null){
+            System.out.println("Entry is not saved");
+            //throw new EntryNotSavedException();
+        }
 
         return "newEntryCreated";
     }

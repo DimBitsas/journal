@@ -5,9 +5,9 @@
     <title>Create new entry</title>
 </head>
 <body>
-    <h1>Create new movie entry</h1><br>
+    <h1>Create new journal entry</h1><br>
 
-    <form action="createNewEntryValidation">
+    <form action="createNewEntry">
         Provide title<br>
         <input type="text" name="title" id="title" required><br>
         Provide description<br>
@@ -16,8 +16,8 @@
         <input type="number" name="difficulty" id="difficulty" min="1" max="10" required><br>
         Provide relevant topics<br>
         <input type="text" name="relevantTopics" id="relevantTopics" ><br>
-        Provide time spent<br>
-        <input type="number" name="timeSpent" id="timeSpent" required><br>
+        Provide time spent(hours)<br>
+        <input type="number" name="timeSpent" id="timeSpent" min="1" required><br>
         <br>
         <input type=submit value="Submit">
     </form>
