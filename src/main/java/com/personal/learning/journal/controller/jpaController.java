@@ -1,5 +1,6 @@
 package com.personal.learning.journal.controller;
 
+import com.personal.learning.journal.exception.EntryNotFoundException;
 import com.personal.learning.journal.model.Entry;
 import com.personal.learning.journal.service.EntryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class jpaController {
         Optional<Entry> entry = service.findById(id);
 
         if(!entry.isPresent()){
-            //throw new EntryNotFoundException("id-"+id);
+            throw new EntryNotFoundException("id-"+id);
         }
 
         return entry.get();
