@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Controller
@@ -34,10 +35,11 @@ public class journalController {
 
     @GetMapping(path = "/createNewEntry")
     public String createNewEntry(@RequestParam("title")
-                                     @Size(min = 4, message = "Title should have at least 4 characters") String title,
+                                     @Size(min = 4, message = "Title should have at least 4 characters")
+                                     @NotBlank(message = "Title may not be blank") String title,
                                  @RequestParam("description")
                                     @Size(min = 10, message = "Description should have at least 10 characters")
-                                         String description,
+                                         @NotBlank(message = "Description may not be blank") String description,
                                  @RequestParam("difficulty") @Min(1) @Max(10) int difficulty,
                                  @RequestParam("timeSpent") @Min(1) int timeSpent,
                                  @RequestParam("relevantTopics") String relevantTopics){

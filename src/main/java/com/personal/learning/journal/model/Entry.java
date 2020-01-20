@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -16,9 +17,11 @@ public class Entry {
     private Long id;
 
     @Size(min = 4, message = "Title should have at least 4 characters")
+    @NotBlank(message = "Title may not be blank")
     private String title;
 
     @Size(min = 10, message = "Description should have at least 10 characters")
+    @NotBlank(message = "Description may not be blank")
     private String description;
 
     @Min(1)
