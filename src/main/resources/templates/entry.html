@@ -6,7 +6,7 @@
 </head>
 
 <script>
-    function checkNewEntryForm(){
+    function checkEntryForm(){
 			var title = document.getElementById("title").value;
 			var description = document.getElementById("description").value;
 
@@ -25,7 +25,7 @@
 <body>
     <h1>Create new journal entry</h1><br>
 
-    <form action="createNewEntry" onsubmit="return checkNewEntryForm()">
+    <form action="addEntry" onsubmit="return checkEntryForm()">
         Provide title(4 or more characters)<br>
         <input pattern=".{4,}" required title="4 characters minimum" type="text" name="title" id="title"><br>
         Provide description(10 or more characters)<br>

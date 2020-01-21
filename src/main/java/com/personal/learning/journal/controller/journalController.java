@@ -33,8 +33,8 @@ public class journalController {
     @GetMapping(path = "/entry")
     public String showEntryForm(){return "entry";}
 
-    @GetMapping(path = "/createNewEntry")
-    public String createNewEntry(@RequestParam("title")
+    @GetMapping(path = "/addEntry")
+    public String createEntry(@RequestParam("title")
                                      @Size(min = 4, message = "Title should have at least 4 characters")
                                      @NotBlank(message = "Title may not be blank") String title,
                                  @RequestParam("description")
@@ -54,7 +54,7 @@ public class journalController {
         return "entryCreated";
     }
 
-    @GetMapping(path = "deleteEntry")
+    @GetMapping(path = "/deleteEntry")
     public String deleteEntry(@RequestParam("entryId") Long entryId){
         if(!service.existsById(entryId)){
             return "entryNotExist";
