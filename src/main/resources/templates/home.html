@@ -6,10 +6,19 @@
 </head>
 <body>
     Welcome<br><br>
-    <a href="entryForm">Create new entry</a><br>
+    <a href="entryForm">Create new entry</a><br><br>
+
+    <form action="deleteEntry">
+        Delete entry(Provide Id):<br>
+        <input type="number" name="entryId" id="entryId" required>
+        <input type="submit" value="Delete">
+    </form>
 
     <h1>All the journal entries so far</h1>
     <tr th:each="entry : ${entries}">
+
+        <td><b>Id</b>: </td>
+        <td th:text="${entry.id}"> </td><br>
         <td><b>Title</b>: </td>
         <td th:text="${entry.title}"> </td><br>
         <td><b>Description</b>: </td>

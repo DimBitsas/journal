@@ -53,4 +53,10 @@ public class journalController {
 
         return "newEntryCreated";
     }
+
+    @GetMapping(path = "deleteEntry")
+    public String deleteEntry(@RequestParam("entryId") Long entryId){
+        service.deleteById(entryId);
+        return "entryDeleted";
+    }
 }
