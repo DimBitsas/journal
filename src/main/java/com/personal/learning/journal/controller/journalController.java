@@ -56,6 +56,9 @@ public class journalController {
 
     @GetMapping(path = "deleteEntry")
     public String deleteEntry(@RequestParam("entryId") Long entryId){
+        if(!service.existsById(entryId)){
+            return "entryNotExist";
+        }
         service.deleteById(entryId);
         return "entryDeleted";
     }
