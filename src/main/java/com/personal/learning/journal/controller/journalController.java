@@ -30,8 +30,8 @@ public class journalController {
         return "home";
     }
 
-    @GetMapping(path = "/entryForm")
-    public String showEntryForm(){return "entryForm";}
+    @GetMapping(path = "/entry")
+    public String showEntryForm(){return "entry";}
 
     @GetMapping(path = "/createNewEntry")
     public String createNewEntry(@RequestParam("title")
@@ -51,7 +51,7 @@ public class journalController {
             throw new EntryNotSavedException("Entry was not saved in the database");
         }
 
-        return "newEntryCreated";
+        return "entryCreated";
     }
 
     @GetMapping(path = "deleteEntry")
